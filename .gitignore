@@ -1,0 +1,4 @@
+pipelines/__pycache__/
+steps/__pycache__/
+.DS_Store
+steps/.DS_Store
