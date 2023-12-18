@@ -31,7 +31,7 @@ class R2(Evaluation):
             logging.error("Error in calculating R2 Score: {}".format(e))
             raise e
 
-class RMSE(evaluation):
+class RMSE(Evaluation):
     def calculate_scores(self, y_true: np.ndarray, y_pred: np.ndarray):
         try:
             logging.info("Calculating RMSE")
