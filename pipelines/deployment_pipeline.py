@@ -48,3 +48,6 @@ def continuous_deployment_pipeline(
         workers=workers,
         timeout = timeout,
     )
+
+def test():
+    pass
