@@ -5,6 +5,7 @@ from rich import print
 from zenml.integrations.mlflow.mlflow_utils import get_tracking_uri
 from zenml.integrations.mlflow.model_deployers.mlflow_model_deployer import (
     MLFlowModelDeployer,
+    inference_pipeline,
 )
 from zenml.integrations.mlflow.services import MLFlowDeploymentService
 
@@ -46,7 +47,10 @@ def deployment_pipeline(config: str, min_accuracy: float):
             workers=3,
             timeout=60,)
     if predict:
-        inference_pipeline()
+        inference_pipeline(
+            pipeline_name = "continuous_deployment_pipeline",
+            pipeline_step_name = "mlflow_model_deployer_step",
+        )
     
     print(
         "You can run:\n "
